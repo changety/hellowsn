@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal"
+    android:paddingBottom="7dip"
+    android:paddingLeft="6dip"
+     android:background="#CCCCCC"
+    android:paddingRight="6dip"
+    android:paddingTop="8dip" >
+
+    <ImageView
+        android:id="@+id/node_listitem_image"
+        style="@style/node_image"
+        android:src="@drawable/widget_dface_loading" />
+
+    <RelativeLayout
+        android:id="@+id/node_listitem_nodeDetailRL"
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:layout_marginLeft="6dip" >
+
+        <TextView
+            android:id="@+id/node_listitem_nodetype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:includeFontPadding="false"
+            android:text="协调器"
+            android:textColor="@color/listitem_black"
+            android:textSize="@dimen/text_size_20" />
+
+        <TextView
+            android:id="@+id/node_listitem_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/node_listitem_nodetype"
+            android:layout_marginLeft="10dip"
+            android:layout_toRightOf="@+id/node_listitem_nodetype"
+            android:text="这是协调器"
+            android:textColor="@color/listitem_blue"
+            android:textColorLink="@color/listitem_gray"
+            android:textSize="@dimen/text_size_15" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/node_listitem_nodetype"
+            android:layout_marginTop="3dip" >
+
+            <TextView
+                android:id="@+id/node_listitem_netaddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="网络地址:0000"
+                android:textColor="@color/listitem_black"
+                android:textSize="@dimen/text_size_13" />
+
+            <TextView
+                android:id="@+id/node_listitem_ieeeaddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_toRightOf="@+id/node_listitem_netaddress"
+                android:text="IEEE:ABCD1234567890EF"
+                android:textColor="@color/listitem_black"
+                android:textSize="@dimen/text_size_13" />
+
+            <TextView
+                android:id="@+id/node_listitem_refreshtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/node_listitem_netaddress"
+                android:layout_marginLeft="10dip"
+                android:layout_marginTop="3dip"
+                android:text="11分前"
+                android:textColor="@color/listitem_black"
+                android:textSize="@dimen/text_size_10" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

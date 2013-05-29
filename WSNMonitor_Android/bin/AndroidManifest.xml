@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ty.change.wsn"
+    android:versionCode="20120316"
+    android:versionName="3.0" >
+
+    <uses-sdk
+        android:maxSdkVersion="16"
+        android:minSdkVersion="8" />
+    <!-- <uses-sdk android:targetSdkVersion="8"/> -->
+    <application
+        android:name=".app.AppContext"
+        android:icon="@drawable/wsn"
+        android:label="@string/wsn_monitor_app" >
+        <activity
+            android:name=".activity.UserLoginActivity"
+            android:label="WSN监控软件登入" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.NodeMainActivity"
+            android:label="节点信息查询" >
+        </activity>
+        <activity
+            android:name=".activity.NodeQueryActivity"
+            android:label="节点数据查询" >
+        </activity>
+        <activity
+            android:name=".activity.NodeHistoryDataActivity"
+            android:label="查询设置记录" >
+        </activity>
+        <activity android:name=".activity.HelpActivity" >
+        </activity>
+        <activity
+            android:name=".activity.NodeNetActivity"
+            android:label="节点网络查询" >
+        </activity>
+        <activity
+            android:name=".activity.NodeControlActivity"
+            android:label="节点状态控制" >
+        </activity>
+        <activity android:name=".activity.SettingActivity" >
+        </activity>
+        <activity
+            android:name=".activity.SerialCommControlActivity"
+            android:label="串口通信设置" >
+        </activity>
+        <activity
+            android:name=".activity.UserRegisterActivity"
+            android:label="账户注册" >
+        </activity>
+        <activity android:name=".activity.NotificationsActivity" >
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="WSN监控软件功能导航"
+            android:launchMode="singleTask" >
+        </activity>
+        <activity
+            android:name=".activity.NodeQueryDetailActivity"
+            android:label="节点数据详细查询" >
+        </activity>
+        <activity
+            android:name=".activity.NotificationSettingsActivity"
+            android:label="WSN监控软件设置" >
+        </activity>
+        <activity
+            android:name=".activity.NotificationDetailsActivity"
+            android:label="推送消息详情" >
+        </activity>
+
+        <service
+            android:name=".androidpn.client.NotificationService"
+            android:enabled="true"
+            android:label="NotificationService" >
+            <intent-filter>
+                <action android:name="ty.change.wsn.androidpn.client.NotificationService" />
+            </intent-filter>
+        </service>
+    </application>
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+</manifest>

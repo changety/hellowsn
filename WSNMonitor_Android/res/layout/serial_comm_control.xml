@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/infoRL"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip" >
+
+        <TextView
+            android:id="@+id/monitorActivityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="@string/monitorActivity" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/monitorActivityStatusShowTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_toRightOf="@+id/monitorActivityTextView"
+            android:text="TextView" >
+        </TextView>
+
+        <Button
+            android:id="@+id/monitorActivityControlStatusButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/monitorActivityStatusShowTextView"
+            android:text="@string/monitorQueryStatus" >
+        </Button>
+
+        <ProgressBar
+            android:id="@+id/serial_progress_1"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:layout_marginRight="10dip" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/controlRL"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/infoRL" >
+
+        <TextView
+            android:id="@+id/monitorActivityStatusControlTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="@string/monitorControlStatus" >
+        </TextView>
+
+        <Spinner
+            android:id="@+id/monitorActivityStatusControlSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/monitorActivityStatusControlTextView" >
+        </Spinner>
+
+        <Button
+            android:id="@+id/monitorActivityControlStatusConfirmButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/monitorActivityStatusControlTextView"
+            android:layout_toRightOf="@+id/monitorActivityStatusControlSpinner"
+            android:text="@string/monitorControlStatusConfirm" >
+        </Button>
+
+        <ProgressBar
+            android:id="@+id/serial_progress_2"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:layout_marginRight="10dip" />
+    </RelativeLayout>
+
+</RelativeLayout>

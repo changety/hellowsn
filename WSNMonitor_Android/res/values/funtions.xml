@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="FunctionList">
+        <item>节点数据查询</item>
+        <item>节点网络查询</item>
+        <item>节点状态控制</item>
+        <item>通信设置</item>
+        <item>推送消息</item>
+        <item>关        于</item>
+        <item>系统设置</item>
+        <item>使用帮助</item>
+        <item>退出系统</item>
+    </string-array>
+
+</resources>

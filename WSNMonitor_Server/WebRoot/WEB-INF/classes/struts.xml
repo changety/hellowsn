@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+	<package name="struts2.1" extends="json-default">
+		<action name="registerAction" class="registerAction" method="register">
+			<result type="json" />
+		</action>
+		<action name="loginAction" class="loginAction" method="login">
+			<result type="json" />
+		</action>
+		<action name="wsnStrutsCheckAction" class="wsnStrutsCheckAction"
+			method="wsnStrutsCheck">
+			<result type="json" />
+		</action>
+		<action name="wsnNodeControlAction" class="wsnNodeControlAction"
+			method="wsnNodeControl">
+			<result type="json" />
+		</action>
+		<action name="serialCommControlAction" class="serialCommControlAction"
+			method="serialCommControl">
+			<result type="json" />
+		</action>
+		<action name="nodeDetailQueryAction" class="nodeDetailQueryAction"
+			method="queryDetail">
+			<result type="json" />
+		</action>
+		<action name="baseAction" class="baseAction">
+		</action>
+	</package>
+</struts>    
+ 

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="ty.change.wsn.entity.User" table="T_User">
+		
+		<id name="id" column="id" type="long">
+			<generator class="native"> <!-- 主键id的生成方式为自增 -->
+			</generator>
+		</id>
+		<property name="username" column="username" type="string" unique="true" not-null="true"></property>
+		<property name="password" column="password" type="string"></property>
+		<property name="authority" column="authority" type="string"></property>
+		<property name="email" column="email" type="string"></property>
+		<property name="Login" column="login" type="true_false"></property>
+		<property name="Pn" column="pn" type="true_false"></property>
+		<property name="createdDate" column="created_date" update="false"></property>
+		<property name="updatedDate" column="updated_date" ></property>
+	</class>
+
+</hibernate-mapping>
+

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/framework_info"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/aboutActivity" />
+
+    <TextView
+        style="@style/framework_title"
+        android:text="@string/framework_name_androidpn" />
+
+    <TextView
+        style="@style/framework_link"
+        android:autoLink="all"
+        android:text="@string/framework_link_androidpn" />
+
+    <TextView
+        style="@style/framework_title"
+        android:text="@string/framework_name_fastjson" />
+
+    <TextView
+        style="@style/framework_link"
+        android:autoLink="all"
+        android:text="@string/framework_link_fastjson" />
+
+    <TextView
+        style="@style/framework_title"
+        android:autoLink="all"
+        android:text="@string/framework_name_asynhttp" />
+
+    <TextView
+        style="@style/framework_link"
+        android:autoLink="all"
+        android:text="@string/framework_link_asynhttp" />
+
+    <TextView
+        style="@style/framework_title"
+        android:text="@string/framework_name_ormlite" />
+
+    <TextView
+        style="@style/framework_link"
+        android:autoLink="all"
+        android:text="@string/framework_link_ormlite" />
+
+    <TextView
+        style="@style/framework_title"
+        android:autoLink="all"
+        android:text="@string/framework_name_universal_imageloader" />
+
+    <TextView
+        style="@style/framework_link"
+        android:autoLink="all"
+        android:text="@string/framework_link_universal_imageloader" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="all"
+        android:text="License:
+The Android WSNMonitor Client is released under the Android-friendly Apache License, Version 2.0. Read the full license here:
+http://www.apache.org/licenses/LICENSE-2.0" />
+
+</LinearLayout>

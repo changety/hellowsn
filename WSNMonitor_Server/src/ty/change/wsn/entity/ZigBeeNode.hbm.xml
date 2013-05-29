@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="ty.change.wsn.entity.ZigBeeNode" table="T_NodeInfo"  polymorphism="explicit">
+
+		<id name="ieeeAddress" column="ieeeAddress" type="string">
+			<generator class="assigned">
+			</generator>
+		</id>
+
+
+		<property name="pieeeAddress" column="pieeeAddress" type="string"></property>
+		<property name="netAddress" column="netAddress" type="string"></property>
+		<property name="pNetAddress" column="pNetAddress" type="string"></property>
+		<property name="type" column="type" type="string"></property>
+		<property name="pType" column="pType" type="string"></property>
+		<property name="isLeaf" column="isLeaf" type="string"></property>
+
+		<property name="deviceState" column="deviceState" type="string"></property>
+		<property name="tempValue" column="tempValue" type="string"></property>
+		<property name="reportCycle" column="reportCycle" type="string"></property>
+		<property name="volValue" column="volValue" type="string"></property>
+		<property name="joinTime" column="joinTime" type="timestamp"></property>
+		<property name="updateTime" column="updateTime" type="timestamp"></property>
+
+	</class>
+
+</hibernate-mapping>
+

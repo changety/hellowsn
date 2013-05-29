@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:background="#CCCCCC"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/logintv_rl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip" >
+
+        <TextView
+            android:id="@+id/logintv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+              style="@style/node_query_detail_temp_title"
+            android:text="@string/loginInfo" >
+        </TextView>
+
+        <ProgressBar
+            android:id="@+id/login_progress"
+            style="@style/loading_small"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/acount_rl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logintv_rl"
+        android:layout_marginTop="20dip"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/login_username_info"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="@string/registerInfo1"
+            android:textColor="#EE0000" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/login_username_info"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/login_username_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dip"
+                style="@style/node_query_detail_temp_title"
+                android:text="账号"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/login_username_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:hint="输入账号"
+                android:textAppearance="?android:attr/textAppearanceMedium" >
+            </EditText>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/acount_password_rl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/acount_rl"
+        android:layout_marginTop="20dip"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/login_password_info"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="@string/registerInfo2"
+            android:textColor="#EE0000" >
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/login_password_info"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/login_password_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"
+                android:text="密码"
+                 style="@style/node_query_detail_temp_title"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/login_password_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:hint="输入密码"
+                android:inputType="textPassword"
+                android:textAppearance="?android:attr/textAppearanceMedium" >
+            </EditText>
+        </LinearLayout>
+    </RelativeLayout>
+    
+ <RelativeLayout
+        android:id="@+id/acount_ip_rl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/acount_password_rl"
+        android:layout_marginTop="20dip"
+        android:orientation="horizontal" >
+
+        <TextView
+android:id="@+id/login_ip_info"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="当wifi环境测试时请输入服务器IP"
+            android:textColor="#EE0000" >
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/login_ip_info"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/login_ip_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"
+                android:text="  IP  "
+                 style="@style/node_query_detail_temp_title"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/login_ip_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:text="192.168.1.110"
+                android:textAppearance="?android:attr/textAppearanceMedium" >
+            </EditText>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/acount_ip_rl"
+        android:layout_marginTop="10dip" >
+
+        <Button
+            android:id="@+id/loginlogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/loginregister"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dip"
+            android:text="@string/loginsubmit" />
+
+        <Button
+            android:id="@+id/loginregister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/loginregister" >
+        </Button>
+
+        <Button
+            android:id="@+id/loginexit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/loginregister"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dip"
+            android:text="@string/loginexit" >
+        </Button>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="ty.change.wsn.entity.Coordinator" table="T_Coordinator" >
+		
+		<id name="id" column="id" type="int">
+			<generator class="native"> <!-- 主键id的生成方式为自增 -->
+			</generator>
+		</id>
+		
+		<property name="ieeeAddress" column="ieeeAddress" type="string"></property>
+		<property name="pieeeAddress" column="pieeeAddress" type="string"></property>
+		<property name="netAddress" column="netAddress" type="string"></property>
+		<property name="pNetAddress" column="pNetAddress" type="string"></property>
+		<property name="type" column="type" type="string"></property>
+		<property name="pType" column="pType" type="string"></property>
+		<property name="panid" column="panid" type="string"></property>
+		
+		<property name="joinTime" column="joinTime" type="timestamp"></property>
+	</class>
+
+</hibernate-mapping>
+

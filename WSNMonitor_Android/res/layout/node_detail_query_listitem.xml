@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal"
+    android:paddingBottom="7dip"
+     android:background="#CCCCCC"
+    android:paddingLeft="6dip"
+    android:paddingRight="6dip"
+    android:paddingTop="8dip" >
+
+    <ImageView
+        android:id="@+id/node_detail_query_listitem_image"
+        style="@style/node_image"
+        android:src="@drawable/widget_dface_loading" />
+
+    <RelativeLayout
+        android:id="@+id/node_listitem_nodeDetailRL"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dip" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dip" >
+
+            <RelativeLayout
+                android:id="@+id/node_listitem_nodeDetail_common_info"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/tnode_query_listitem_netaddress"
+                    style="@style/node_query_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="网络地址:" />
+
+                <TextView
+                    android:id="@+id/node_query_listitem_netaddress"
+                    style="@style/node_query_detail_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/tnode_query_listitem_netaddress"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@+id/tnode_query_listitem_netaddress"
+                    android:text="0000" />
+
+                <TextView
+                    android:id="@+id/tnode_query_listitem_ieeeaddress"
+                    style="@style/node_query_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tnode_query_listitem_netaddress"
+                    android:text="IEEE:" />
+
+                <TextView
+                    android:id="@+id/node_query_listitem_ieeeaddress"
+                    style="@style/node_query_detail_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/tnode_query_listitem_ieeeaddress"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@+id/tnode_query_listitem_ieeeaddress"
+                    android:text="0000" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/node_query_sensor_info_rl"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/node_listitem_nodeDetail_common_info"
+                android:layout_marginTop="3dip" >
+
+                <TextView
+                    android:id="@+id/tnode_query_listitem_temp"
+                    style="@style/node_query_detail_temp_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignBaseline="@+id/node_query_listitem_temp"
+                    android:text="温度: " />
+
+                <TextView
+                    android:id="@+id/node_query_listitem_temp"
+                    style="@style/node_query_detail_temp_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tnode_query_listitem_temp"
+                    android:text="23°" />
+                
+                  <TextView
+                    android:id="@+id/tnode_query_listitem_tvoltage"
+                    style="@style/node_query_detail_temp_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/node_query_listitem_temp"
+                    android:layout_alignBaseline="@+id/node_query_listitem_voltage"
+                    android:text="节点电压: " />
+
+                <TextView
+                    android:id="@+id/node_query_listitem_voltage"
+                    style="@style/node_query_detail_voltage_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/node_query_listitem_temp"
+                    android:layout_toRightOf="@+id/tnode_query_listitem_tvoltage"
+                    android:text="3.3v" />
+                
+
+                <TextView
+                    android:id="@+id/node_query_listitem_lgiht"
+                    style="@style/node_query_detail_temp_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dip"
+                       android:layout_alignBaseline="@+id/node_query_listitem_temp"
+                    android:text="外设状态:" />
+
+                <ImageView
+                    android:id="@+id/node_query_listitem_relay"
+                    style="@style/relay_image"
+                    android:layout_toRightOf="@+id/node_query_listitem_lgiht"
+                    android:src="@drawable/bulb_off" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/node_query_sensor_info_tail"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/node_query_sensor_info_rl" >
+
+                <TextView
+                    android:id="@+id/node_query_listitem_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="位置信息:"
+                    android:textColor="@color/listitem_black"
+                    android:textSize="@dimen/text_size_13" />
+
+                <TextView
+                    android:id="@+id/node_query_reporttime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/node_query_listitem_location"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="3dip"
+                    android:text="11分前"
+                    android:textColor="@color/listitem_black"
+                    android:textSize="@dimen/text_size_10" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

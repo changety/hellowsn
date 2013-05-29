@@ -1,0 +1,92 @@
+//    Copyright (c) 2009 by Texas Instruments, Inc.
+//    All Rights Reserved.  Permission to use, reproduce, copy, prepare
+//    derivative works, modify, distribute, perform, display or sell this
+//    software and/or its documentation for any purpose is prohibited
+//    without the express written consent of Texas Instruments, Inc.
+
+// Test script to send a SYS_OSAL_NV_WRITE command to write to item 0x1, 0x69, 0x6a, 0x6b to ZR 
+
+
+import System;
+import System.Text;
+import TI.ZPI2;
+
+class MyClass
+{	
+	// declare global variables
+	var Pass : int = 0;
+	var ieee = [0x02, 0x00, 0x00, 0x00, 0x00, 0x4b, 0x12, 0x00];
+	var data0x69 = [0x03, 0x06, 0x9b, 0xc9, 0x8f, 0x75, 0x1f, 0xba, 0x22, 0xdb, 0xca, 0xd6, 0x4a, 0x7d, 0x46, 0x2c, 0x20, 0x9c, 0x2e, 0xd9, 0x01, 0x5f, 0x00, 0x12, 0x4b, 0x00, 0x00, 0x00, 0x00, 0x02, 0x54,  0x45, 0x53, 0x54, 0x53, 0x45, 0x43, 0x41, 0x01, 0x09, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00];
+	var data0x6a = [0x03, 0x7a, 0xd5, 0x45, 0xab, 0xa5, 0xf7, 0x47, 0xe4, 0x0a, 0x24, 0xea, 0x85, 0x50, 0x4c, 0x47, 0x39, 0x8c, 0x97, 0xf4, 0x96];
+	var data0x6b = [0x02, 0x00, 0xfd, 0xe8, 0xa7, 0xf3, 0xd1, 0x08, 0x42, 0x24, 0x96, 0x2a, 0x4e, 0x7c, 0x54, 0xe6, 0x9a, 0xc3, 0xf0, 0x4d, 0xa6, 0xb8];
+
+	
+	function Start()
+		{
+      // subscribe to message handler
+		ZEngine.add_OnMessageZPI2(this.MessageHandler);
+
+		// SYS_OSAL_NV_WRITE  to ZR
+		
+		nvWrite("R" , 0x69 , 48, data0x69);
+		ZEngine.Pause(1000);
+		nvWrite("R" , 0x6a , 21, data0x6a);
+		ZEngine.Pause(1000);
+		nvWrite("R" , 0x6b , 22, data0x6b);
+		ZEngine.Pause(1000);
+		nvWrite("R" , 0x1 , 8, ieee);
+		ZEngine.Pause(100);
+				
+	if (Pass == 4) 
+		{
+		ZEngine.Complete(true);	
+		}	
+	else
+		{
+		ZEngine.ErrorDetail = "FAILED :  command failed to send";
+		ZEngine.Complete(false);
+		}
+	} // end function Start()		
+
+	
+	function MessageHandler(zportName:String, id:MESSAGE_ID, msg:Object)
+	{
+		switch(id)
+			{
+
+			case MESSAGE_ID.SYS_OSAL_NV_WRITE_SRSP:
+		  	   {
+				var rsp : SYS_OSAL_NV_WRITE_SRSP = msg;
+				if (rsp.Status == 0)
+					{
+					Pass++;
+					}
+			   }
+			break; 
+
+			default:
+			   {
+			   }
+			} // end Switch
+
+	} // end msg handler function
+
+	function nvWrite(zportName : String, Id : ushort, Len : ushort, data : Byte[])
+	// send a  SYS_OSAL_NV_WRITE    message
+	{
+		var req : SYS_OSAL_NV_WRITE = new SYS_OSAL_NV_WRITE  ();
+		req.Id =  Id;
+		req.Len = Len;
+		req.Offset = 0;
+//		req.Value= new byte[Len];
+		req.Value = data; 
+		// display log messages
+		ZEngine.WriteLog("SYS_OSAL_NV_WRITE to " + zportName); 
+		ZEngine.Send(zportName, req);
+	}
+	
+		
+} // end MyClass
+
+var mc:MyClass = new MyClass();
+mc.Start();

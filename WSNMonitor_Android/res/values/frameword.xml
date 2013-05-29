@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="framework_name_androidpn">androidpn:</string>
+    <string name="framework_name_fastjson">fastjson:</string>
+    <string name="framework_name_asynhttp">asynhttp:</string>
+    <string name="framework_name_ormlite">ormlite:</string>
+    <string name="framework_name_universal_imageloader">universal_imageloader:</string>
+    <string name="framework_link_androidpn">http://sourceforge.net/projects/androidpn/</string>
+    <string name="framework_link_fastjson">http://code.alibabatech.com/wiki/pages/viewpage.action?pageId=2424946</string>
+    <string name="framework_link_asynhttp">https://github.com/changety/android-async-http</string>
+    <string name="framework_link_ormlite">http://ormlite.com/</string>
+    <string name="framework_link_universal_imageloader">https://github.com/nostra13/Android-Universal-Image-Loader?source=cc</string>
+
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="ty.change.wsn.entity.EndDevice" table="T_EndDevice" lazy="false" >
+		
+		<id name="id" column="id" type="int">
+			<generator class="native"> <!-- 主键id的生成方式为自增 -->
+			</generator>
+		</id>
+		
+		<property name="ieeeAddress" column="ieeeAddress" type="string"></property>
+		<property name="pieeeAddress" column="pieeeAddress" type="string"></property>
+		<property name="netAddress" column="netAddress" type="string"></property>
+		<property name="pNetAddress" column="pNetAddress" type="string"></property>
+		<property name="type" column="type" type="string"></property>
+		<property name="pType" column="pType" type="string"></property>
+		
+		<property name="temp" column="temp" type="string"></property>
+		<property name="voltage" column="voltage" type="string"></property>		
+		<property name="updateTime" column="updateTime" type="timestamp"></property>
+	
+	</class>
+
+</hibernate-mapping>
+

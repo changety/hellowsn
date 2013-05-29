@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url">
+			<value>jdbc:mysql://localhost:3306/wsnsp</value>
+		</property>
+		<property name="username">
+			<value>root</value>
+		</property>
+		<property name="password">
+			<value>root</value>
+		</property>
+		<property name="maxActive" value="20"></property>
+		<property name="maxIdle" value="10"></property>
+		<property name="maxWait" value="300"></property>
+	</bean>
+	<!-- =============================================================== -->
+	<!-- Hibernate -->
+	<!-- =============================================================== -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mappingResources">
+			<list>
+				<value>ty/change/wsn/entity/User.hbm.xml</value>
+				<value>ty/change/wsn/entity/ZigBeeNode.hbm.xml</value>
+				<value>ty/change/wsn/entity/Coordinator.hbm.xml</value>
+				<value>ty/change/wsn/entity/Router.hbm.xml</value>
+				<value>ty/change/wsn/entity/EndDevice.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+		<!-- 	<prop key="hibernate.hbm2ddl.auto">update</prop> -->	
+			</props>
+		</property>
+	</bean>
+
+	<!-- =============================================================== -->
+	<!-- Data Access Objects -->
+	<!-- =============================================================== -->
+	<bean id="wsnDao"
+		class="ty.change.wsn.dao.HibernateMySQLImpl.WSNDaoHibernateMySQL"
+		scope="singleton">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="userDao"
+		class="ty.change.wsn.dao.HibernateMySQLImpl.UserDaoHibernateMySQL"
+		scope="singleton">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- =============================================================== -->
+	<!-- Services -->
+	<!-- =============================================================== -->
+	<bean id="wsnServiceTarget" class="ty.change.wsn.service.impl.WSNServiceImpl">
+		<property name="wsnDao" ref="wsnDao"></property>
+	</bean>
+	<bean id="wsnService"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="target" ref="wsnServiceTarget"></property>
+		<property name="transactionManager" ref="transactionManager"></property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="userServiceTarget" class="ty.change.wsn.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	<bean id="userService"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="target" ref="userServiceTarget"></property>
+		<property name="transactionManager" ref="transactionManager"></property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- <bean id="userService" class="ty.change.wsn.service.impl.UserServiceImpl"> 
+		<property name="userDao" ref="userDao" /> </bean> -->
+
+
+	<!-- =============================================================== -->
+	<!-- 事务管理 -->
+	<!-- =============================================================== -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!-- =============================================================== -->
+	<!-- ApplicationContext 配置 -->
+	<!-- =============================================================== -->
+	<bean id="springApplicationContext" class="ty.change.wsn.util.ApplicationContextHelper"></bean>
+
+	<!-- =============================================================== -->
+	<!-- Struts2 -->
+	<!-- =============================================================== -->
+	<bean id="registerAction" class="ty.change.wsn.action.RegisterAction"
+		scope="prototype">
+		<property name="wsnService" ref="wsnService"></property>
+		<property name="userService" ref="userService"></property>
+	</bean>
+	<bean id="baseAction" class="ty.change.wsn.action.BaseAction"
+		scope="prototype">
+		<property name="wsnService" ref="wsnService"></property>
+		<property name="userService" ref="userService"></property>
+	</bean>
+	<bean id="loginAction" class="ty.change.wsn.action.LoginAction"
+		scope="prototype" parent="baseAction" />
+	<bean id="wsnStrutsCheckAction" class="ty.change.wsn.action.WSNStrutsCheckAction"
+		scope="prototype" parent="baseAction" />
+	<bean id="nodeDetailQueryAction" class="ty.change.wsn.action.NodeDetailQueryAction"
+		scope="prototype" parent="baseAction" />
+	<bean id="wsnNodeControlAction" class="ty.change.wsn.action.WSNNodeControlAction"
+		parent="baseAction" scope="singleton" lazy-init="default" />
+	<bean id="serialCommControlAction" class="ty.change.wsn.action.SerialCommControlAction"
+		parent="baseAction" scope="singleton" lazy-init="default" />
+
+
+	<!-- =============================================================== -->
+	<!-- SSL -->
+	<!-- =============================================================== -->
+
+	<!-- <bean id="tlsContextFactory" class="org.androidpn.server.ssl2.ResourceBasedTLSContextFactory"> 
+		<constructor-arg value="classpath:bogus_mina_tls.cert" /> <property name="password" 
+		value="boguspw" /> <property name="trustManagerFactory"> <bean class="org.androidpn.server.ssl2.BogusTrustManagerFactory" 
+		/> </property> </bean> -->
+
+	<!-- =============================================================== -->
+	<!-- MINA -->
+	<!-- =============================================================== -->
+
+	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="customEditors">
+			<map>
+				<entry key="java.net.SocketAddress">
+					<bean class="org.apache.mina.integration.beans.InetSocketAddressEditor" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="xmppHandler" class="org.androidpn.server.xmpp.net.XmppIoHandler" />
+
+	<bean id="filterChainBuilder"
+		class="org.apache.mina.core.filterchain.DefaultIoFilterChainBuilder">
+		<property name="filters">
+			<map>
+				<entry key="executor">
+					<bean class="org.apache.mina.filter.executor.ExecutorFilter" />
+				</entry>
+				<entry key="codec">
+					<bean class="org.apache.mina.filter.codec.ProtocolCodecFilter">
+						<constructor-arg>
+							<bean class="org.androidpn.server.xmpp.codec.XmppCodecFactory" />
+						</constructor-arg>
+					</bean>
+				</entry>
+				<!-- <entry key="logging"> <bean class="org.apache.mina.filter.logging.LoggingFilter" 
+					/> </entry> -->
+			</map>
+		</property>
+	</bean>
+
+	<bean id="ioAcceptor" class="org.apache.mina.transport.socket.nio.NioSocketAcceptor"
+		init-method="bind" destroy-method="unbind">
+		<property name="defaultLocalAddress" value=":5222" />
+		<property name="handler" ref="xmppHandler" />
+		<property name="filterChainBuilder" ref="filterChainBuilder" />
+		<property name="reuseAddress" value="true" />
+	</bean>
+</beans>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\WSNMonitorApp.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>Build All</name>
+      <member>
+        <project>WSNMonitorApp</project>
+        <configuration>CoordinatorEB</configuration>
+      </member>
+      <member>
+        <project>WSNMonitorApp</project>
+        <configuration>RouterEB</configuration>
+      </member>
+      <member>
+        <project>WSNMonitorApp</project>
+        <configuration>EndDeviceEB</configuration>
+      </member>
+      <member>
+        <project>WSNMonitorApp</project>
+        <configuration>DemoEB</configuration>
+      </member>
+      <member>
+        <project>WSNMonitorApp</project>
+        <configuration>CoordinatorEB-Pro</configuration>
+      </member>
+      <member>
+        <project>WSNMonitorApp</project>
+        <configuration>RouterEB-Pro</configuration>
+      </member>
+      <member>
+        <project>WSNMonitorApp</project>
+        <configuration>EndDeviceEB-Pro</configuration>
+      </member>
+      <member>
+        <project>WSNMonitorApp</project>
+        <configuration>DemoEB-Pro</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

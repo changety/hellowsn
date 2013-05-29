@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="frame_button">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/frame_button_bg</item>
+        <item name="android:textColor">@color/frame_button_text_light</item>
+    </style>
+
+    <style name="loading_small" parent="@android:style/Widget.ProgressBar.Small">
+        <item name="android:indeterminateDrawable">@anim/loading</item>
+        <item name="android:layout_width">21dip</item>
+        <item name="android:layout_height">21dip</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="widget_listview">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:listSelector">@drawable/listview_item_selector</item>
+        <item name="android:divider">@drawable/listview_divider_line</item>
+        <item name="android:dividerHeight">1.0dip</item>
+        <item name="android:fadingEdge">none</item>
+        <item name="android:scrollingCache">false</item>
+    </style>
+
+    <style name="node_image">
+        <item name="android:layout_width">40.0dip</item>
+        <item name="android:layout_height">40.0dip</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:padding">1.0dip</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/widget_dface_border</item>
+    </style>
+
+    <style name="relay_image">
+        <item name="android:layout_width">40.0dip</item>
+        <item name="android:layout_height">50.0dip</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:padding">1.0dip</item>
+        <item name="android:clickable">true</item>
+        <item name="android:src">@drawable/widget_dface_loading</item>
+    </style>
+
+    <style name="light_image">
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:padding">1.0dip</item>
+        <item name="android:clickable">true</item>
+        <item name="android:src">@drawable/widget_dface_loading</item>
+    </style>
+
+    <style name="detail_head_title">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/text_size_20</item>
+        <item name="android:textColor">@color/head_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#ffffffff</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+
+    <style name="framework_info">
+        <item name="android:textColor">@color/listitem_white</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+    </style>
+
+    <style name="framework_title">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_20</item>
+        <item name="android:textColor">@color/head_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#ffffffff</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+
+    <style name="framework_link">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/listitem_black</item>
+        <item name="android:textSize">@dimen/text_size_15</item>
+    </style>
+
+    <style name="App.Preference.TextAppearance.Large" parent="@android:style/TextAppearance.Large">
+        <item name="android:textColor">@color/primary_text_light</item>
+    </style>
+
+    <style name="node_query_detail_title">
+        <item name="android:textColor">@color/listitem_black</item>
+        <item name="android:textSize">@dimen/text_size_13</item>
+    </style>
+
+    <style name="node_query_detail_temp_title">
+        <item name="android:textColor">@color/listitem_black</item>
+        <item name="android:textSize">@dimen/text_size_15</item>
+    </style>
+
+    <style name="node_query_detail_temp_content">
+        <item name="android:textColor">@color/listitem_red</item>
+        <item name="android:textSize">@dimen/text_size_23</item>
+    </style>
+
+    <style name="node_query_detail_voltage_content">
+        <item name="android:textColor">@color/listitem_red</item>
+        <item name="android:textSize">@dimen/text_size_20</item>
+    </style>
+
+    <style name="node_query_detail_info">
+        <item name="android:textColor">@color/listitem_blue</item>
+        <item name="android:textSize">@dimen/text_size_13</item>
+    </style>
+
+    <style name="node_control_title_info">
+        <item name="android:textColor">@color/listitem_red</item>
+        <item name="android:textSize">@dimen/text_size_13</item>
+    </style>
+
+    <style name="App.Preference.TextAppearance.Small" parent="@android:style/TextAppearance.Small">
+        <item name="android:textColor">@color/secondary_text_light</item>
+    </style>
+
+</resources>

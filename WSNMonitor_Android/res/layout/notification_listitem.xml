@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal"
+    android:paddingBottom="7dip"
+    android:paddingLeft="6dip"
+   android:background="#CCCCCC"
+    android:paddingRight="6dip"
+    android:paddingTop="8dip" >
+
+    <RelativeLayout
+        android:id="@+id/noti_listitem_notiDetailRL"
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:layout_marginLeft="2dip" >
+
+        <TextView
+            android:id="@+id/noti_listitem_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:includeFontPadding="false"
+            android:text="协调器"
+            android:textColor="@color/listitem_black"
+            android:textSize="@dimen/text_size_20" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/noti_listitem_title"
+            android:layout_marginTop="3dip" >
+
+            <TextView
+                android:id="@+id/noti_listitem_notidetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="网络地址:0000"
+                android:textColor="@color/listitem_red"
+                android:textSize="@dimen/text_size_13" />
+
+            <TextView
+                android:id="@+id/noti_listitem_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/noti_listitem_notidetail"
+                android:layout_marginLeft="10dip"
+                android:layout_marginTop="3dip"
+                android:text="11分前"
+                android:textColor="@color/listitem_black"
+                android:textSize="@dimen/text_size_10" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>
