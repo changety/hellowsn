@@ -20,3 +20,14 @@ Android终端:
 - 节点控制
 - 推送消息接收等功能
 - 推送规则设置
+
+### License
+
+[**GNU GENERAL PUBLIC LICENSE**](http://www.gnu.org/licenses/gpl.html)
+
+Version 3, 29 June 2007
+
+Copyright © 2007 Free Software Foundation, Inc. <http://fsf.org/>
+
+Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
+
