@@ -1,7 +1,7 @@
 Wireless Sensor Networks(WSN) Monitor System Based On Android
 =============================================================
 
-基于Android平台的WSN监控系统包括三部分:
+包括三部分:
 ------------------------------------------------------
 - [**ZigBee**协议](http://www.zigbee.org/)实现的WSN，由ZigBee协议的传感节点组成，完成数据采集、处理、上传，执行控制命令。
 - **JavaWeb**实现的服务端，由RS232通信，数据解析，持久化层，面向移动终端的Web通信等模块组成。web部分包括了HTTP及XMPP协议的推送服务。
