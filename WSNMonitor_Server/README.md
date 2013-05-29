@@ -34,3 +34,13 @@
 - HTTP 接受来自Android终端的数据请求，并返回对应数据。
 - XMPP服务保持与Aandroid终端的持久连接，将WSN中解析到的紧急数据(可设定)实时推送给终端。
 - 更多参见源码。
+
+### License
+
+[**GNU GENERAL PUBLIC LICENSE**](http://www.gnu.org/licenses/gpl.html)
+
+Version 3, 29 June 2007
+
+Copyright © 2007 Free Software Foundation, Inc. <http://fsf.org/>
+
+Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
